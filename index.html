@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<script src="script.js"></script>
+</head>
+<body>
+
+<h1>FICHAS RPG</h1>
+
+<form id="formFicha">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" required>
+    <label for="pontos">Pontos:</label>
+    <input type="number" id="pontos" required>
+    <label for="lore">História:</label>
+    <input type="text" id="lore" required>
+    <label for="forca">Força:</label>
+    <input type="number" id="forca" required>
+    <label for="habilidade">Habilidade:</label>
+    <input type="number" id="habilidade" required>
+    <label for="resistencia">Resistência:</label>
+    <input type="number" id="resistencia" required>
+    <label for="pdf">Poder de Fogo:</label>
+    <input type="number" id="pdf" required>
+    <label for="pda">Pontos de Ação:</label>
+    <span id="pdaDisplay"></span>
+    <label for="pdm">Pontos de Mana:</label>
+    <span id="pdmDisplay"></span>
+    <label for="pdv">Pontos de Vida:</label>
+    <span id="pdvDisplay"></span>
+
+    <button type="button" onclick="calcularPDV()">Calcular PDV</button>
+    <button type="button" onclick="calcularPDM()">Calcular PDM</button>
+    <button type="button" onclick="calcularPDA()">Calcular PDA</button>
+    <button type="button" onclick="salvarFicha()">Salvar</button>
+    <button type="button" id="btnAtualizar" onclick="atualizarFicha()" style="display:none;">Atualizar</button>
+</form>
+
+<h2>Fichas Criadas</h2>
+<ul id="listaFichas"></ul>
+</body>
+</html>
