@@ -5,18 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
 <script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>FICHAS RPG</h1>
+<h1>Fichas 3d&t</h1>
 
 <form id="formFicha">
+<div class="linha1">
     <label for="nome">Nome:</label>
     <input type="text" id="nome" required>
     <label for="pontos">Pontos:</label>
     <input type="number" id="pontos" required>
-    <label for="lore">História:</label>
-    <input type="text" id="lore" required>
+</div>
+    <div class="linha2">
+        <label for="lore">História:</label>
+        <textarea id="lore" name="w3review" rows="4" cols="50" required>
+        </textarea>
+    </div>
+    <div class="linha3">
     <label for="forca">Força:</label>
     <input type="number" id="forca" required>
     <label for="habilidade">Habilidade:</label>
@@ -25,18 +32,19 @@
     <input type="number" id="resistencia" required>
     <label for="pdf">Poder de Fogo:</label>
     <input type="number" id="pdf" required>
-    <label for="pda">Pontos de Ação:</label>
-    <span id="pdaDisplay"></span>
-    <label for="pdm">Pontos de Mana:</label>
-    <span id="pdmDisplay"></span>
-    <label for="pdv">Pontos de Vida:</label>
-    <span id="pdvDisplay"></span>
-
-    <button type="button" onclick="calcularPDV()">Calcular PDV</button>
-    <button type="button" onclick="calcularPDM()">Calcular PDM</button>
-    <button type="button" onclick="calcularPDA()">Calcular PDA</button>
-    <button type="button" onclick="salvarFicha()">Salvar</button>
+</div>
+    <div class="linha4">
+        <label for="pda">Pontos de Ação:</label>
+        <span id="pdaDisplay"></span>
+        <label for="pdm">Pontos de Mana:</label>
+        <span id="pdmDisplay"></span>
+        <label for="pdv">Pontos de Vida:</label>
+        <span id="pdvDisplay"></span>
+        <button type="button" onclick="calcular()">Calcular Pontos</button>
+    </div>
+    <div class="linha5"><button type="button" onclick="salvarFicha()">Salvar</button>
     <button type="button" id="btnAtualizar" onclick="atualizarFicha()" style="display:none;">Atualizar</button>
+</div>
 </form>
 
 <h2>Fichas Criadas</h2>

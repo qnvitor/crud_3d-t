@@ -1,4 +1,4 @@
-function calcularPDV() {
+function calcular() {
     // Obter o valor de "resistencia"
     const resistencia = document.getElementById('resistencia').value;
 
@@ -12,8 +12,7 @@ function calcularPDV() {
     } else {
         alert('A resistência deve ser um número válido.');
     }
-}
-function calcularPDM() {
+
     // Obter o valor de "habilidade"
     const habilidade = document.getElementById('habilidade').value;
 
@@ -27,8 +26,7 @@ function calcularPDM() {
     } else {
         alert('A habilidade deve ser um número válido.');
     }
-}
-function calcularPDA() {
+
     // Obter o valor de "forca"
     const forca = document.getElementById('forca').value;
 
@@ -80,11 +78,10 @@ function salvarFicha() {
     const habilidade = document.getElementById('habilidade').value;
     const resistencia = document.getElementById('resistencia').value;
     const pdf = document.getElementById('pdf').value;
-    const pda = document.getElementById('pda').value;
-    const pdm = document.getElementById('pdm').value;
-    const pdv = document.getElementById('pdv').value;
+    const pda = document.getElementById('pdaDisplay').textContent; // Obter PDA do elemento span
+    const pdm = document.getElementById('pdmDisplay').textContent; // Obter PDM do elemento span
+    const pdv = document.getElementById('pdvDisplay').textContent; // Obter PDV do elemento span
 
-    // Verifica se está em modo de edição
     if(fichaParaEditar !== null) {
         fichas[fichaParaEditar] = {nome, pontos, lore, forca, habilidade, resistencia, pdf, pda, pdm, pdv};
         fichaParaEditar = null;
@@ -92,9 +89,9 @@ function salvarFicha() {
     } else {
         fichas.push({nome, pontos, lore, forca, habilidade, resistencia, pdf, pda, pdm, pdv});
     }
-    
+
     localStorage.setItem('fichas', JSON.stringify(fichas));
-    
+
     document.getElementById('nome').value = '';
     document.getElementById('pontos').value = '';
     document.getElementById('lore').value = '';
@@ -102,9 +99,9 @@ function salvarFicha() {
     document.getElementById('habilidade').value = '';
     document.getElementById('resistencia').value = '';
     document.getElementById('pdf').value = '';
-    document.getElementById('pda').value = '';
-    document.getElementById('pdm').value = '';
-    document.getElementById('pdv').value = '';
+    document.getElementById('pdaDisplay').textContent = '';
+    document.getElementById('pdmDisplay').textContent = '';
+    document.getElementById('pdvDisplay').textContent = '';
 
     renderizarLista();
 }
